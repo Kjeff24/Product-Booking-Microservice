@@ -3,6 +3,12 @@ spring:
     name: booking-service
   config:
     import: optional:configserver:http://localhost:8888
+# RabbitMQ config
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 # Configuration of vault connection
   cloud:
     vault:
@@ -12,3 +18,10 @@ spring:
       authentication: token
       token: 00000000-0000-0000-0000-000000000000
       application-name: booking-service
+
+# Below property will enable us to access the /actuator/refresh endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

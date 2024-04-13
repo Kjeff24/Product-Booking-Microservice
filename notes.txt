@@ -1,6 +1,8 @@
 Bootstrap in spring boot
 After changes are made in config files
-send post to /actuator/refresh from you specifice service(server) to refresh you server with the latest update
+send post to /actuator/refresh from you specific service(server) to refresh you server with the latest update
+All services have been configured with RabbitMQ:
+    Send post to actuator/busrefresh from any service(server) to refresh your server with the latest update
 
 Set vault address in environment variable:
     variable name: VAULT_ADDR
@@ -16,3 +18,6 @@ Command to wrtie to vault:
 Command to read from vault:
     vault kv get secret/<directory-name>
     Example: vault kv get secret/booking-service
+
+Command to start RabbitMQ in docker:
+    docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management

@@ -9,4 +9,4 @@ eureka:
     instance-id: ${spring.application.name}:${random.uuid}
 
 app:
-  prop1: This is prop 2 updated
+  prop1: publish and subscribe using rabbitMQ testing 2

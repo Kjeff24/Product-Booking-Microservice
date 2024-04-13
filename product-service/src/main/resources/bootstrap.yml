@@ -12,6 +12,12 @@ spring:
       authentication: token
       token: 00000000-0000-0000-0000-000000000000
       application-name: product-service
+# RabbitMQ config
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 # Below property will enable us to access the /actuator/refresh endpoint
 management:
@@ -19,3 +25,4 @@ management:
     web:
       exposure:
         include: "*"
+
