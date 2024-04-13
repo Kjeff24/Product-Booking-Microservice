@@ -10,6 +10,7 @@
         <module name="product-service" />
         <module name="config-server" />
         <module name="discovery-service" />
+        <module name="gateway" />
         <module name="booking-service" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="booking-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="product-service" options="-parameters" />
     </option>
   </component>

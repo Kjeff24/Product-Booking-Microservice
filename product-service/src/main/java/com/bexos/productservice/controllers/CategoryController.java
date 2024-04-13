@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/categories")
+@RequestMapping("/api/products/categories")
 @Getter
 @Setter
 @RefreshScope // This will refresh all the @value data in this bean after /actuator/refresh is called
