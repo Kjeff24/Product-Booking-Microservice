@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: product-service
+  config:
+    import: configserver:http://localhost:8888
+# Configuration of vault connection
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      authentication: token
+      token: 00000000-0000-0000-0000-000000000000
+      application-name: product-service
+
+# Below property will enable us to access the /actuator/refresh endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

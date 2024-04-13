@@ -1,13 +1,18 @@
 Bootstrap in spring boot
 After changes are made in config files
-send post to /actuator/refresh to refresh you server with the latest update
+send post to /actuator/refresh from you specifice service(server) to refresh you server with the latest update
 
-Installing vault:
-    vault server --dev --dev-root-token-id="00000000-0000-0000-0000-000000000000"
 Set vault address in environment variable:
     variable name: VAULT_ADDR
     variable path: http://127.0.0.1:8200
-Encrypting a file using vault:
-    vault kv put secret/<file-name> @<file-name-with-path>
-    Example:
-  vault kv get secret/booking-service
+
+Command to start vault server in dev mode:
+    vault server --dev --dev-root-token-id="00000000-0000-0000-0000-000000000000"
+
+Command to wrtie to vault:
+    vault kv put secret/<directory-name> @<file-name-with-path>
+    Example: vault kv put secret/booking-service @booking-service.json
+
+Command to read from vault:
+    vault kv get secret/<directory-name>
+    Example: vault kv get secret/booking-service
