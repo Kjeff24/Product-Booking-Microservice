@@ -10,14 +10,14 @@ spring:
     username: guest
     password: guest
 # Configuration of vault connection
-  cloud:
-    vault:
-      host: localhost
-      port: 8200
-      scheme: http
-      authentication: token
-      token: 00000000-0000-0000-0000-000000000000
-      application-name: booking-service
+#  cloud:
+#    vault:
+#      host: localhost
+#      port: 8200
+#      scheme: http
+#      authentication: token
+#      token: ${my_token}
+#      application-name: booking-service
 
 # Below property will enable us to access the /actuator/refresh endpoint
 management:

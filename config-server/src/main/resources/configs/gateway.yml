@@ -16,10 +16,30 @@ spring:
         id: booking-service
         uri: lb://booking-service
         predicates[0]: Path=/api/bookings/**
+# Enable token relay- Pass the successful authenticated token from keycloak server to downstream APIs
+      default-filters: TokenRelay
 # Below property tells API Gateway to work in a load balanced mode
     loadbalancer:
       ribbon:
         enabled: true
+# Configuration for connecting to keycloak server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/demo/protocol/openid-connect/certs
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/demo
+        registration:
+          spring-with-test-scope:
+            client-id: spring-with-test-scope
+            client-secret: ${client_secret}
+            provider: keycloak
+            authorization-grant-type: authorization_code
+            scope: openid
+#            redirect-uri: http://localhost:8765/login/oauth2/code/spring-cloud-gateway-client
 
 server:
   port: 8765

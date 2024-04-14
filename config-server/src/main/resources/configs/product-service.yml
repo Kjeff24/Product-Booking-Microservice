@@ -1,6 +1,10 @@
 spring:
   application:
     name: product-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/product-db
+
 server:
   port: 0
 # Generate a unique name for the instance
@@ -10,3 +14,4 @@ eureka:
 
 app:
   prop1: publish and subscribe using rabbitMQ testing 2
+

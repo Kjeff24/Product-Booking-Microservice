@@ -4,15 +4,20 @@ spring:
   config:
     import: configserver:http://localhost:8888
 # Configuration of vault connection
-  cloud:
-    vault:
-      host: localhost
-      port: 8200
-      scheme: http
-      authentication: token
-      token: 00000000-0000-0000-0000-000000000000
-      application-name: product-service
-# RabbitMQ config
+#  cloud:
+#    vault:
+#      host: localhost
+#      port: 8200
+#      scheme: http
+#      authentication: token
+#      token: ${my_token}
+#      application-name: product-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/demo/protocol/openid-connect/certs
+  # RabbitMQ config
   rabbitmq:
     host: localhost
     port: 5672
