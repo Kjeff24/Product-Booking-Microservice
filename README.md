@@ -14,7 +14,7 @@ docker run --name keycloak -p 8080:8080 -e KEYCLOAK_ADMIN=<admin> -e KEYCLOAK_AD
 ```
   - After keycloak is running create a realm `demo`
 ![image](https://github.com/Kjeff24/Product-Booking-Microservice/assets/91270318/b241a660-71c4-41e8-9897-7370e226f9ad)
-  - Create a client `spring-with-test-scope`, Valid redirect URIs `http://localhost:8765/*`, Web origins `http://localhost:8765` and ebsure you have client authentication on
+  - Create a client `spring-with-test-scope`, Valid redirect URIs `http://localhost:8765/*`, Web origins `http://localhost:8765` and ensure you have client authentication on
 ![image](https://github.com/Kjeff24/Product-Booking-Microservice/assets/91270318/70059f22-aa06-4b40-9944-3b974177ce38)
 ![image](https://github.com/Kjeff24/Product-Booking-Microservice/assets/91270318/48019043-fdea-4297-888f-e4a51b19c5ae)
   - Ensure you replace client-secret in `config-server/src/main/resources/configs/gateway.yml` with the client secret from keycloak
